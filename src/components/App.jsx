@@ -1,16 +1,18 @@
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBarHeader from './AppBar/AppBar';
+import Search from './SearchBar/SearchBar';
+
+
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <MuiThemeProvider>
+        <div>
+          <AppBarHeader />
+          <Search />
+        </div>
+      </MuiThemeProvider>
     </div>
   );
 };

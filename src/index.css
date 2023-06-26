@@ -7,9 +7,29 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 100%; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button{
+  padding: 20px;
+  background-color: blue;
+  color: white;
+  font-size: 30;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.forBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
