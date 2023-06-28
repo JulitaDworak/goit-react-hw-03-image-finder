@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { fetchPhotosWithQuery } from './services/api';
-import { Searchbar } from './Searchbar/Searchbar';
+import { Searchbar } from './SearchBar/SearchBar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
