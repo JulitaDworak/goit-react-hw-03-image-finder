@@ -1,24 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GridTile } from 'material-ui';
-import IconButton from 'material-ui/IconButton';
-import ZoomIn from 'material-ui/svg-icons/action/zoom-in';
+
 
 
 
 const ImageGalleryItem = ({ img, handleOpen }) => (
-  <GridTile
+  <div 
     title={img.tags}
     key={img.id}
     subtitle={img.user}
     actionIcon={
-      <IconButton onClick={() => handleOpen(img.largeImageURL)}>
-        <ZoomIn color="white" />
-      </IconButton>
+      <button onClick={() => handleOpen(img.largeImageURL)}>
+        show me this picture
+      </button>
     }
   >
-    <img src={img.largeImageURL} alt="" />
-  </GridTile>
+    <img  src={img.largeImageURL} alt="" />
+  </div>
 );
 
 ImageGalleryItem.propTypes = {

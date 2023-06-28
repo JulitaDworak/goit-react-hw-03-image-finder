@@ -1,8 +1,8 @@
 import React from 'react';
 
-
-import AppBar from 'material-ui/AppBar' ;
-
-const AppBarHeader = () => <AppBar title="ImageFinder" />
+const AppBarHeader = () => 
+<div>
+<h1 title="ImageFinder"> Find Image</h1>
+</div>
 export default AppBarHeader  
 

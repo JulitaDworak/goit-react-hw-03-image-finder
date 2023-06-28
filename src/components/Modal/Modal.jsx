@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+
+
 
 const Modal = ({ open, handleClose, currentImg }) => {
   const actions = [
-    <FlatButton label="Close" primary={true} onClick={handleClose} />,
+    <button label="Close" primary={true} onClick={handleClose}></button>,
   ];
 
   return (
-    <Dialog
+    <div
       actions={actions}
       modal={false}
       open={open}
       onRequestClose={handleClose}
     >
       <img src={currentImg} alt="" style={{ width: '100%' }} />
-    </Dialog>
+    </div>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import CircularProgress from "material-ui/CircularProgress";
 
-const Loader = () => <CircularProgress/>
+
+const Loader = () => <div>Is Loading.....</div>
 
 
 export default Loader

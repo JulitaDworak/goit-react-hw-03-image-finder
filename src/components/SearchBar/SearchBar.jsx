@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
 import axios from 'axios';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import Button from '../Button/Button';
@@ -53,8 +52,8 @@ class Search extends Component {
   render() {
     console.log(this.state);
     return (
-      <div>
-        <TextField
+      <div >
+        <input
           name="searchtext"
           value={this.state.searchtext}
           onChange={this.onTextChange}
@@ -65,8 +64,8 @@ class Search extends Component {
       autocomplete="off"
       autofocus
       placeholder="Search images and photos"
-        />
-
+        >
+          </input>
 
         {this.state.images.length > 0 && (
           <ImageGallery images={this.state.images} />

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { GridList } from 'material-ui';
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import Loader from 'components/Loader/Loader';
 import Modal from 'components/Modal/Modal';
@@ -12,7 +11,7 @@ class ImageGallery extends Component {
     isLoading: false,
   };
 
-  handleOpen = img => {
+  handleOpen = (img) => {
     this.setState({ open: true, currentImg: img });
   };
 
@@ -26,29 +25,22 @@ class ImageGallery extends Component {
     const { open, currentImg, isLoading } = this.state;
 
     if (images) {
-        imageListContent = (
-            <GridList cols={4}>
-              {images.map((img) => (
-                <ImageGalleryItem img={img} handleOpen={this.handleOpen} key={img.id} />
-              ))}
-            </GridList>
-          );
-          ;
+      imageListContent = images.map((img) => (
+        <ImageGalleryItem img={img} handleOpen={this.handleOpen} key={img.id} />
+      ));
     } else {
       imageListContent = <Loader />;
     }
 
-
-
     return (
-      <div>
+      <div >
         {imageListContent}
         {isLoading && <Loader />}
 
         <Modal
-          open={this.state.open}
+          open={open}
           handleClose={this.handleClose}
-          currentImg={this.state.currentImg}
+          currentImg={currentImg}
         />
       </div>
     );
