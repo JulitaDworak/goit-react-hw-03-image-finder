@@ -1,16 +1,28 @@
-import React, { Component } from "react";
 
+import { Component } from 'react';
+import css from './Button.module.css';
+import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-class ButtonShow extends Component {
+export class Button extends Component {
+  handleClick = e => {
+    if (this.props.onClick) {
+      this.props.onClick(e);
+    } else {
+      toast.info('Brak więcej grafik');
+    }
+  };
+
   render() {
     return (
-      <div class="forBtn">
-
-        <button onClick={this.props.onClick}>Load More</button>
-
-      </div>
+      <button type="button" onClick={this.handleClick} className={css.Button}>
+        Load more
+      </button>
     );
   }
 }
 
-export default ButtonShow;
+Button.propTypes = {
+  onClick: PropTypes.func,
+};

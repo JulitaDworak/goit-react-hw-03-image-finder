@@ -1,27 +1,29 @@
-import React from 'react';
+import css from './ImageGalleryItem.module.css';
 import PropTypes from 'prop-types';
 
+export const ImageGalleryItem = props => {
+  const { id, webformatURL, largeImageURL, tags, imageAddress } = props;
 
-
-
-const ImageGalleryItem = ({ img, handleOpen }) => (
-  <div 
-    title={img.tags}
-    key={img.id}
-    subtitle={img.user}
-    actionIcon={
-      <button onClick={() => handleOpen(img.largeImageURL)}>
-        show me this picture
-      </button>
-    }
-  >
-    <img  src={img.largeImageURL} alt="" />
-  </div>
-);
-
-ImageGalleryItem.propTypes = {
-  img: PropTypes.object.isRequired,
-  handleOpen: PropTypes.func.isRequired,
+  return (
+    <li
+      className={css.ImageGalleryItem}
+      key={id}
+      value={id}
+      onClick={() => imageAddress(largeImageURL)}
+    >
+      <img
+        src={webformatURL}
+        alt={tags}
+        className={css.ImageGalleryItemImage}
+      />
+    </li>
+  );
 };
 
-export default ImageGalleryItem;
+ImageGalleryItem.propTypes = {
+  id: PropTypes.number,
+  webformatURL: PropTypes.string,
+  largeImageURL: PropTypes.string,
+  tags: PropTypes.string,
+  imageAddress: PropTypes.func,
+};
