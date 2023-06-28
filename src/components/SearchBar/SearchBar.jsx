@@ -14,7 +14,7 @@ class Search extends Component {
     image_type: 'photo',
     orientation: 'horizontal',
     safesearch: true,
-    currentPage: 1, // aktualna strona obrazów
+    currentPage: 1, // aktualna strona obrazów;
   };
 
   onTextChange = e => {
